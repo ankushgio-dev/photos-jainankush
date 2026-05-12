@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import { photos, categories, photosByCategory } from '../../data/photos.js';
+
+export function getStaticPaths() {
+  return photos.map((photo) => {
+    const catPhotos = photosByCategory(photo.category);
+    const idx = catPhotos.findIndex((p) => p.slug === photo.slug);
+    const prev = idx > 0 ? catPhotos[idx - 1] : null;
+    const next = idx < catPhotos.length - 1 ? catPhotos[idx + 1] : null;
+    const category = categories.find((c) => c.slug === photo.category);
+    return {
+      params: { category: photo.category, photo: photo.slug },
+      props: { photo, prev, next, category, position: idx + 1, total: catPhotos.length },
+    };
+  });
+}
+
+const { photo, prev, next, category, position, total } = Astro.props;
+---
+
+<Base title={category.name} description={photo.alt} activeNav={category.slug}>
+  <section class="px-4 md:px-8 pt-6 md:pt-10 pb-16 md:pb-24">
+    <!-- Breadcrumb + position -->
+    <div class="max-w-gallery mx-auto mb-6 md:mb-10 flex items-center justify-between fade-up">
+      <a
+        href={`/${category.slug}/`}
+        class="eyebrow inline-flex items-center gap-2 hover:text-ink transition-colors duration-300 ease-soft"
+      >
+        <span aria-hidden="true">←</span>
+        {category.name}
+      </a>
+      <span class="eyebrow text-muted">
+        {String(position).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+    </div>
+
+    <!-- The photograph -->
+    <figure class="max-w-[min(92vw,1400px)] mx-auto fade-up fade-up-delay-1">
+      <div class="photo-frame">
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          loading="eager"
+          decoding="async"
+          class="block w-full h-auto max-h-[82vh] object-contain mx-auto"
+        />
+      </div>
+      {photo.location && (
+        <figcaption class="eyebrow text-center mt-6 text-muted">
+          {photo.location}
+        </figcaption>
+      )}
+    </figure>
+
+    <!-- Prev/Next navigation -->
+    <nav
+      class="max-w-gallery mx-auto mt-12 md:mt-16 flex items-center justify-between fade-up fade-up-delay-2"
+      aria-label="Photo navigation"
+    >
+      <div class="w-1/3">
+        {prev ? (
+          <a
+            href={`/${category.slug}/${prev.slug}/`}
+            class="group inline-flex items-center gap-3 text-muted hover:text-ink transition-colors duration-300 ease-soft"
+            rel="prev"
+          >
+            <span class="eyebrow">←&nbsp;&nbsp;Previous</span>
+          </a>
+        ) : (
+          <span class="eyebrow text-line">&nbsp;</span>
+        )}
+      </div>
+
+      <a
+        href={`/${category.slug}/`}
+        class="eyebrow text-muted hover:text-ink transition-colors duration-300 ease-soft text-center w-1/3"
+      >
+        All {category.name}
+      </a>
+
+      <div class="w-1/3 text-right">
+        {next ? (
+          <a
+            href={`/${category.slug}/${next.slug}/`}
+            class="group inline-flex items-center gap-3 text-muted hover:text-ink transition-colors duration-300 ease-soft"
+            rel="next"
+          >
+            <span class="eyebrow">Next&nbsp;&nbsp;→</span>
+          </a>
+        ) : (
+          <span class="eyebrow text-line">&nbsp;</span>
+        )}
+      </div>
+    </nav>
+  </section>
+</Base>
+
+<script>
+  // Arrow key navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if (e.key === 'ArrowLeft') {
+      const prev = document.querySelector<HTMLAnchorElement>('a[rel="prev"]');
+      if (prev) prev.click();
+    } else if (e.key === 'ArrowRight') {
+      const next = document.querySelector<HTMLAnchorElement>('a[rel="next"]');
+      if (next) next.click();
+    } else if (e.key === 'Escape') {
+      const all = document.querySelector<HTMLAnchorElement>('a[href*="/"][class*="eyebrow"]');
+      // Find the "All Category" link or back link
+      const back = Array.from(document.querySelectorAll('a')).find((a) =>
+        a.textContent?.trim().toLowerCase().startsWith('all ')
+      ) as HTMLAnchorElement | undefined;
+      if (back) back.click();
+    }
+  });
+</script>
