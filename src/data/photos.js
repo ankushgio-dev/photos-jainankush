@@ -94,6 +94,16 @@ export const photos = [
   { slug: 'tr-new-zealand-008', src: '/photos/travel/tr-new-zealand-008.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
   { slug: 'tr-new-zealand-009', src: '/photos/travel/tr-new-zealand-009.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International', featured: true },
   { slug: 'tr-new-zealand-010', src: '/photos/travel/tr-new-zealand-010.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-prague-001', src: '/photos/travel/tr-prague-001.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-002', src: '/photos/travel/tr-prague-002.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-003', src: '/photos/travel/tr-prague-003.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-004', src: '/photos/travel/tr-prague-004.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-005', src: '/photos/travel/tr-prague-005.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-006', src: '/photos/travel/tr-prague-006.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-007', src: '/photos/travel/tr-prague-007.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International', featured: true },
+  { slug: 'tr-prague-008', src: '/photos/travel/tr-prague-008.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-prague-009', src: '/photos/travel/tr-prague-009.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International', featured: true },
+  { slug: 'tr-prague-010', src: '/photos/travel/tr-prague-010.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
 ];
 
 // Minimum photos required for a location to appear in the filter.
