@@ -3,7 +3,7 @@
  * photos.jainankush.com — upload helper
  *
  * USAGE:
- *   node scripts/upload.mjs <source-dir> <category-slug> [--location "Goa"] [--featured]
+ *   node scripts/upload.mjs <source-dir> <category-slug> [--location "Name"] [--region "India"] [--year 2018] [--alt-template "Name, {year}"] [--featured]
  *
  * EXAMPLE:
  *   node scripts/upload.mjs ~/Desktop/new-photos rural-punjab
@@ -53,6 +53,12 @@ if (args.length < 2) {
 const [srcDir, category] = args;
 const locationFlag = args.indexOf('--location');
 const location = locationFlag !== -1 ? args[locationFlag + 1] : null;
+const regionFlag = args.indexOf('--region');
+const region = regionFlag !== -1 ? args[regionFlag + 1] : null;
+const yearFlag = args.indexOf('--year');
+const year = yearFlag !== -1 ? args[yearFlag + 1] : null;
+const altTemplateFlag = args.indexOf('--alt-template');
+const altTemplate = altTemplateFlag !== -1 ? args[altTemplateFlag + 1] : null;
 const featured = args.includes('--featured');
 
 if (!VALID_CATEGORIES.includes(category)) {
@@ -125,8 +131,14 @@ for (const file of files) {
     .withMetadata({ exif: {}, icc: undefined }) // strip all metadata
     .toFile(outPath);
 
+
+
+  
+
   const meta = await sharp(outPath).metadata();
-  const altGuess = basename(file, extname(file)).replace(/[-_]/g, ' ');
+  const altGuess = altTemplate
+    ? altTemplate.replace('{year}', year || '')
+    : basename(file, extname(file)).replace(/[-_]/g, ' ');
 
   const entry = {
     slug,
@@ -134,10 +146,13 @@ for (const file of files) {
     alt: altGuess,
     category,
     ...(location ? { location } : {}),
+    ...(region ? { region } : {}),
     ...(featured ? { featured: true } : {}),
     width: meta.width,
     height: meta.height,
   };
+
+
 
   entries.push(entry);
   console.log(`  ✓ ${file} → ${outName} (${meta.width}×${meta.height})`);
@@ -153,7 +168,8 @@ entries.forEach((e) => {
     `alt: '${e.alt}'`,
     `category: '${e.category}'`,
   ];
-  if (e.location) parts.push(`location: '${e.location}'`);
+ if (e.location) parts.push(`location: '${e.location}'`);
+  if (e.region) parts.push(`region: '${e.region}'`);
   if (e.featured) parts.push(`featured: true`);
   console.log(`  { ${parts.join(', ')} },`);
 });

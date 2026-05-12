@@ -71,7 +71,6 @@ export const photos = [
   { slug: 'tr-spiti-008', src: '/photos/travel/tr-spiti-008.jpg', alt: 'A small village settled in a valley floor, ringed by bare brown hills', category: 'travel', location: 'Spiti', region: 'India' },
   { slug: 'tr-spiti-009', src: '/photos/travel/tr-spiti-009.jpg', alt: 'A dirt road switchbacking up the side of a steep mountain', category: 'travel', location: 'Spiti', region: 'India' },
   { slug: 'tr-spiti-010', src: '/photos/travel/tr-spiti-010.jpg', alt: 'Three figures walking together across an open mountain landscape', category: 'travel', location: 'Spiti', region: 'India' },
-
   { slug: 'tr-ladakh-001', src: '/photos/travel/tr-ladakh-001.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
   { slug: 'tr-ladakh-002', src: '/photos/travel/tr-ladakh-002.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
   { slug: 'tr-ladakh-003', src: '/photos/travel/tr-ladakh-003.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India', featured: true },
@@ -82,7 +81,18 @@ export const photos = [
   { slug: 'tr-ladakh-008', src: '/photos/travel/tr-ladakh-008.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India', featured: true },
   { slug: 'tr-ladakh-009', src: '/photos/travel/tr-ladakh-009.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
   { slug: 'tr-ladakh-010', src: '/photos/travel/tr-ladakh-010.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
-
+  { slug: 'tr-varanasi-001', src: '/photos/travel/tr-varanasi-001.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-002', src: '/photos/travel/tr-varanasi-002.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India', featured: true },
+  { slug: 'tr-varanasi-003', src: '/photos/travel/tr-varanasi-003.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India', featured: true },
+  { slug: 'tr-varanasi-004', src: '/photos/travel/tr-varanasi-004.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-005', src: '/photos/travel/tr-varanasi-005.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-006', src: '/photos/travel/tr-varanasi-006.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-007', src: '/photos/travel/tr-varanasi-007.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-008', src: '/photos/travel/tr-varanasi-008.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-009', src: '/photos/travel/tr-varanasi-009.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-010', src: '/photos/travel/tr-varanasi-010.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-011', src: '/photos/travel/tr-varanasi-011.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
+  { slug: 'tr-varanasi-012', src: '/photos/travel/tr-varanasi-012.jpg', alt: 'Varanasi, 2018', category: 'travel', location: 'Varanasi', region: 'India' },
   // TRAVEL — INTERNATIONAL
   { slug: 'tr-new-zealand-001', src: '/photos/travel/tr-new-zealand-001.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International', featured: true },
   { slug: 'tr-new-zealand-002', src: '/photos/travel/tr-new-zealand-002.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
