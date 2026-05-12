@@ -114,6 +114,16 @@ export const photos = [
   { slug: 'tr-prague-008', src: '/photos/travel/tr-prague-008.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
   { slug: 'tr-prague-009', src: '/photos/travel/tr-prague-009.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International', featured: true },
   { slug: 'tr-prague-010', src: '/photos/travel/tr-prague-010.jpg', alt: 'Prague, 2020', category: 'travel', location: 'Prague', region: 'International' },
+  { slug: 'tr-switzerland-001', src: '/photos/travel/tr-switzerland-001.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International', featured: true },
+  { slug: 'tr-switzerland-002', src: '/photos/travel/tr-switzerland-002.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-003', src: '/photos/travel/tr-switzerland-003.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-004', src: '/photos/travel/tr-switzerland-004.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-005', src: '/photos/travel/tr-switzerland-005.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-006', src: '/photos/travel/tr-switzerland-006.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-007', src: '/photos/travel/tr-switzerland-007.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International', featured: true },
+  { slug: 'tr-switzerland-008', src: '/photos/travel/tr-switzerland-008.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-009', src: '/photos/travel/tr-switzerland-009.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
+  { slug: 'tr-switzerland-010', src: '/photos/travel/tr-switzerland-010.jpg', alt: 'Switzerland, 2020', category: 'travel', location: 'Switzerland', region: 'International' },
 ];
 
 // Minimum photos required for a location to appear in the filter.
