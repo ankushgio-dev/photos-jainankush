@@ -87,17 +87,26 @@ const prefixMap = {
   hero: 'hero',
 };
 const prefix = prefixMap[category];
+const locSlug = location ? `${location.toLowerCase().replace(/\s+/g, '-')}-` : '';
 
-// Find next available index for this category
+// Build scoped regex: when location is provided, only count files matching THIS location.
+// This fixes the bug where Ladakh got 011-020 (counted whole travel/ folder)
+// instead of 001-010 (its own location-scoped count).
+const slugRegex = locSlug
+  ? new RegExp(`^${prefix}-${locSlug}(\\d{3})\\.jpg$`)
+  : new RegExp(`^${prefix}-(\\d{3})\\.jpg$`);
+
+// Find next available index for this category+location scope
 const existing = existsSync(outDir) ? await readdir(outDir) : [];
 let nextIdx = 1;
 existing.forEach((f) => {
-  const m = f.match(new RegExp(`^${prefix}-(?:[a-z]+-)?(\\d{3})\\.jpg$`));
+  const m = f.match(slugRegex);
   if (m) {
     const n = parseInt(m[1], 10);
     if (n >= nextIdx) nextIdx = n + 1;
   }
 });
+
 
 const entries = [];
 console.log(`\nProcessing ${files.length} file(s) → /public/photos/${category}/\n`);
@@ -105,7 +114,6 @@ console.log(`\nProcessing ${files.length} file(s) → /public/photos/${category}
 for (const file of files) {
   const srcPath = join(srcDir, file);
   const idx = String(nextIdx++).padStart(3, '0');
-  const locSlug = location ? `${location.toLowerCase().replace(/\s+/g, '-')}-` : '';
   const slug = `${prefix}-${locSlug}${idx}`;
   const outName = `${slug}.jpg`;
   const outPath = join(outDir, outName);

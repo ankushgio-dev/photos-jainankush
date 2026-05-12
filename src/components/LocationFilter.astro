@@ -1,39 +1,54 @@
 ---
-interface Props {
+interface RegionGroup {
+  region: string;
   locations: string[];
 }
-
-const { locations } = Astro.props;
+interface Props {
+  groups: RegionGroup[];
+}
+const { groups } = Astro.props;
 ---
+<div class="location-filter mb-12 md:mb-16">
+  <!-- "All" chip on its own row, separated from region groups -->
+  <div class="mb-6">
+    <button
+      type="button"
+      class="filter-chip filter-chip-active"
+      data-filter="all"
+    >
+      All
+    </button>
+  </div>
 
-<div class="location-filter mb-12 md:mb-16 flex flex-wrap gap-2 md:gap-3">
-  <button
-    type="button"
-    class="filter-chip filter-chip-active"
-    data-filter="all"
-  >
-    All
-  </button>
-  {
-    locations.map((loc) => (
-      <button type="button" class="filter-chip" data-filter={loc}>
-        {loc}
-      </button>
-    ))
-  }
+  <!-- Region groups: label above, chips below -->
+  <div class="space-y-4 md:space-y-6">
+    {
+      groups.map((group) => (
+        <div>
+          <div class="text-xs uppercase tracking-widest text-neutral-500 mb-2 md:mb-3">
+            {group.region}
+          </div>
+          <div class="flex flex-wrap gap-2 md:gap-3">
+            {group.locations.map((loc) => (
+              <button type="button" class="filter-chip" data-filter={loc}>
+                {loc}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </div>
 
 <script>
   const chips = document.querySelectorAll('.location-filter [data-filter]');
   const items = document.querySelectorAll('.photo-item');
-
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
       const filter = chip.getAttribute('data-filter');
-
       chips.forEach((c) => c.classList.remove('filter-chip-active'));
       chip.classList.add('filter-chip-active');
-
       items.forEach((item) => {
         const loc = item.getAttribute('data-location');
         const htmlItem = item as HTMLElement;

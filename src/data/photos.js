@@ -1,6 +1,6 @@
 // Photo manifest — single source of truth for the entire site.
-// Each photo entry: { slug, src, alt, category, location?, featured? }
-// `location` only applies to category === 'travel' for filter chips.
+// Each photo entry: { slug, src, alt, category, location?, region?, featured? }
+// `location` and `region` only apply to category === 'travel'.
 // `featured: true` means the photo can appear in the homepage hero rotation.
 
 export const categories = [
@@ -36,6 +36,9 @@ export const categories = [
   },
 ];
 
+// Region taxonomy for travel photos. Order here determines display order in the filter.
+export const regions = ['India', 'International'];
+
 export const photos = [
   // RURAL PUNJAB
   { slug: 'rp-015', src: '/photos/rural-punjab/rp-015.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab', featured: true },
@@ -57,37 +60,45 @@ export const photos = [
 
   // WILDLIFE
 
-  // TRAVEL — with locations for filter chips
-  { slug: 'tr-spiti-001', src: '/photos/travel/tr-spiti-001.jpg', alt: 'A mountain ridge wreathed in low clouds, peaks emerging through the mist', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-002', src: '/photos/travel/tr-spiti-002.jpg', alt: 'A narrow road cut into a cliff face dropping sharply to a valley below', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-003', src: '/photos/travel/tr-spiti-003.jpg', alt: 'A thin waterfall cascading down a sheer rock face onto scree below', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-004', src: '/photos/travel/tr-spiti-004.jpg', alt: 'An empty dirt road winding through a barren high-altitude landscape', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-005', src: '/photos/travel/tr-spiti-005.jpg', alt: 'The Spiti river winding between glacial peaks under a wide sky', category: 'travel', location: 'Spiti', featured: true },
-  { slug: 'tr-spiti-006', src: '/photos/travel/tr-spiti-006.jpg', alt: 'A mountain sunset, the sky banded orange and violet over dark ridgelines', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-007', src: '/photos/travel/tr-spiti-007.jpg', alt: 'A whitewashed Buddhist monastery perched on a ridge above the valley', category: 'travel', location: 'Spiti', featured: true },
-  { slug: 'tr-spiti-008', src: '/photos/travel/tr-spiti-008.jpg', alt: 'A small village settled in a valley floor, ringed by bare brown hills', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-009', src: '/photos/travel/tr-spiti-009.jpg', alt: 'A dirt road switchbacking up the side of a steep mountain', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-010', src: '/photos/travel/tr-spiti-010.jpg', alt: 'Three figures walking together across an open mountain landscape', category: 'travel', location: 'Spiti' },
+  // TRAVEL — INDIA
+  { slug: 'tr-spiti-001', src: '/photos/travel/tr-spiti-001.jpg', alt: 'A mountain ridge wreathed in low clouds, peaks emerging through the mist', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-002', src: '/photos/travel/tr-spiti-002.jpg', alt: 'A narrow road cut into a cliff face dropping sharply to a valley below', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-003', src: '/photos/travel/tr-spiti-003.jpg', alt: 'A thin waterfall cascading down a sheer rock face onto scree below', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-004', src: '/photos/travel/tr-spiti-004.jpg', alt: 'An empty dirt road winding through a barren high-altitude landscape', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-005', src: '/photos/travel/tr-spiti-005.jpg', alt: 'The Spiti river winding between glacial peaks under a wide sky', category: 'travel', location: 'Spiti', region: 'India', featured: true },
+  { slug: 'tr-spiti-006', src: '/photos/travel/tr-spiti-006.jpg', alt: 'A mountain sunset, the sky banded orange and violet over dark ridgelines', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-007', src: '/photos/travel/tr-spiti-007.jpg', alt: 'A whitewashed Buddhist monastery perched on a ridge above the valley', category: 'travel', location: 'Spiti', region: 'India', featured: true },
+  { slug: 'tr-spiti-008', src: '/photos/travel/tr-spiti-008.jpg', alt: 'A small village settled in a valley floor, ringed by bare brown hills', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-009', src: '/photos/travel/tr-spiti-009.jpg', alt: 'A dirt road switchbacking up the side of a steep mountain', category: 'travel', location: 'Spiti', region: 'India' },
+  { slug: 'tr-spiti-010', src: '/photos/travel/tr-spiti-010.jpg', alt: 'Three figures walking together across an open mountain landscape', category: 'travel', location: 'Spiti', region: 'India' },
 
-  { slug: 'tr-ladakh-011', src: '/photos/travel/tr-ladakh-011.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-012', src: '/photos/travel/tr-ladakh-012.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-013', src: '/photos/travel/tr-ladakh-013.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', featured: true },
-  { slug: 'tr-ladakh-014', src: '/photos/travel/tr-ladakh-014.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-015', src: '/photos/travel/tr-ladakh-015.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-016', src: '/photos/travel/tr-ladakh-016.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-017', src: '/photos/travel/tr-ladakh-017.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-018', src: '/photos/travel/tr-ladakh-018.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', featured: true },
-  { slug: 'tr-ladakh-019', src: '/photos/travel/tr-ladakh-019.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-020', src: '/photos/travel/tr-ladakh-020.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-001', src: '/photos/travel/tr-ladakh-001.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-002', src: '/photos/travel/tr-ladakh-002.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-003', src: '/photos/travel/tr-ladakh-003.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India', featured: true },
+  { slug: 'tr-ladakh-004', src: '/photos/travel/tr-ladakh-004.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-005', src: '/photos/travel/tr-ladakh-005.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-006', src: '/photos/travel/tr-ladakh-006.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-007', src: '/photos/travel/tr-ladakh-007.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-008', src: '/photos/travel/tr-ladakh-008.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India', featured: true },
+  { slug: 'tr-ladakh-009', src: '/photos/travel/tr-ladakh-009.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
+  { slug: 'tr-ladakh-010', src: '/photos/travel/tr-ladakh-010.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
 
-
+  // TRAVEL — INTERNATIONAL
+  // (none yet — New Zealand uploads next)
 ];
+
+// Minimum photos required for a location to appear in the filter.
+const LOCATION_MIN_PHOTOS = 4;
 
 // Helpers
 export function photosByCategory(slug) {
   return photos.filter((p) => p.category === slug);
 }
 
+// Returns all photos flagged featured. No cap here — capping (e.g. 15-max for
+// the hero rotator) is the consumer's responsibility, so this stays a pure
+// data accessor and consumers can apply their own selection logic (random,
+// seeded, first-N, etc.) without coupling to this function.
 export function featuredPhotos() {
   return photos.filter((p) => p.featured);
 }
@@ -96,11 +107,33 @@ export function categoryBySlug(slug) {
   return categories.find((c) => c.slug === slug);
 }
 
+// Returns locations grouped by region, suitable for the LocationFilter component.
+// Locations with fewer than LOCATION_MIN_PHOTOS are excluded.
+// Shape: [{ region: 'India', locations: ['Ladakh', 'Spiti'] }, { region: 'International', locations: [...] }]
+// Regions with zero qualifying locations are omitted from the result.
+export function travelLocationsByRegion() {
+  const counts = new Map(); // key: `${region}::${location}` → count
+  for (const p of photos) {
+    if (p.category !== 'travel' || !p.location || !p.region) continue;
+    const key = `${p.region}::${p.location}`;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+
+  return regions
+    .map((region) => {
+      const locations = Array.from(counts.entries())
+        .filter(([key, count]) => key.startsWith(`${region}::`) && count >= LOCATION_MIN_PHOTOS)
+        .map(([key]) => key.split('::')[1])
+        .sort();
+      return { region, locations };
+    })
+    .filter((group) => group.locations.length > 0);
+}
+
+// Flat list of all qualifying locations, preserving region order.
+// Kept for any consumer that doesn't need grouping.
 export function travelLocations() {
-  const set = new Set(
-    photos.filter((p) => p.category === 'travel' && p.location).map((p) => p.location)
-  );
-  return Array.from(set).sort();
+  return travelLocationsByRegion().flatMap((g) => g.locations);
 }
 
 export function categoryCoverPhoto(slug) {

@@ -5,12 +5,13 @@ import LocationFilter from '../../components/LocationFilter.astro';
 import {
   categoryBySlug,
   photosByCategory,
-  travelLocations,
+  travelLocationsByRegion,
 } from '../../data/photos.js';
 
 const category = categoryBySlug('travel');
 const photos = photosByCategory('travel');
-const locations = travelLocations();
+const groups = travelLocationsByRegion();
+const locationCount = groups.reduce((sum, g) => sum + g.locations.length, 0);
 ---
 
 <Base
@@ -25,13 +26,13 @@ const locations = travelLocations();
       <p class="body-serif text-muted mt-5">{category.description}</p>
       <p class="eyebrow mt-6 text-muted">
         {photos.length} {photos.length === 1 ? 'photograph' : 'photographs'}
-        {locations.length > 0 && (
-          <span> · {locations.length} {locations.length === 1 ? 'place' : 'places'}</span>
+        {locationCount > 0 && (
+          <span> · {locationCount} {locationCount === 1 ? 'place' : 'places'}</span>
         )}
       </p>
     </header>
 
-    {locations.length > 0 && <LocationFilter locations={locations} />}
+    {groups.length > 0 && <LocationFilter groups={groups} />}
 
     {
       photos.length > 0 ? (

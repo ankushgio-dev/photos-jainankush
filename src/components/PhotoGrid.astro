@@ -5,6 +5,7 @@ interface Photo {
   alt: string;
   category: string;
   location?: string;
+  region?: string;
 }
 
 interface Props {
@@ -23,6 +24,7 @@ const { photos, showLocations = false } = Astro.props;
         class="photo-item group block break-inside-avoid mb-6 md:mb-8 fade-up"
         style={`animation-delay: ${Math.min(i * 0.04, 0.32)}s`}
         data-location={photo.location || ''}
+        data-region={photo.region || ''}
         aria-label={`View ${photo.alt}`}
       >
         <div class="photo-frame relative overflow-hidden">
