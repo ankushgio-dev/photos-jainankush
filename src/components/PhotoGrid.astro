@@ -1,0 +1,50 @@
+---
+interface Photo {
+  slug: string;
+  src: string;
+  alt: string;
+  category: string;
+  location?: string;
+}
+
+interface Props {
+  photos: Photo[];
+  showLocations?: boolean;
+}
+
+const { photos, showLocations = false } = Astro.props;
+---
+
+<div class="photo-grid grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-20">
+  {
+    photos.map((photo, i) => (
+      <figure
+        class="photo-item fade-up"
+        style={`animation-delay: ${Math.min(i * 0.05, 0.4)}s`}
+        data-location={photo.location || ''}
+      >
+        <div class="photo-frame aspect-auto">
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            loading={i < 4 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="w-full h-auto"
+          />
+        </div>
+        {showLocations && photo.location && (
+          <figcaption class="eyebrow mt-4">{photo.location}</figcaption>
+        )}
+      </figure>
+    ))
+  }
+</div>
+
+<style>
+  /* Slight visual rhythm — odd photos sit lower */
+  @media (min-width: 768px) {
+    .photo-grid .photo-item:nth-child(even) {
+      margin-top: 3rem;
+    }
+  }
+</style>

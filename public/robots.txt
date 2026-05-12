@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://photos.jainankush.com/sitemap-index.xml

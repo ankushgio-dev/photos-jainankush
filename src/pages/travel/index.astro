@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import LocationFilter from '../../components/LocationFilter.astro';
+import {
+  categoryBySlug,
+  photosByCategory,
+  travelLocations,
+} from '../../data/photos.js';
+
+const category = categoryBySlug('travel');
+const photos = photosByCategory('travel');
+const locations = travelLocations();
+---
+
+<Base
+  title={category.name}
+  description={category.description}
+  activeNav="travel"
+>
+  <section class="max-w-gallery mx-auto px-6 md:px-10 pt-8 md:pt-12 pb-16 md:pb-24">
+    <header class="max-w-prose mb-8 md:mb-10 fade-up">
+      <p class="eyebrow mb-3">Category</p>
+      <h1 class="display text-ink">{category.name}</h1>
+      <p class="body-serif text-muted mt-5">{category.description}</p>
+      <p class="eyebrow mt-6 text-muted">
+        {photos.length} {photos.length === 1 ? 'photograph' : 'photographs'}
+        {locations.length > 0 && (
+          <span> · {locations.length} {locations.length === 1 ? 'place' : 'places'}</span>
+        )}
+      </p>
+    </header>
+
+    {locations.length > 0 && <LocationFilter locations={locations} />}
+
+    {
+      photos.length > 0 ? (
+        <PhotoGrid photos={photos} showLocations={true} />
+      ) : (
+        <div class="py-24 text-center">
+          <p class="eyebrow text-muted">No photographs yet.</p>
+        </div>
+      )
+    }
+  </section>
+</Base>

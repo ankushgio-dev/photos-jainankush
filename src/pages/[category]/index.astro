@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { categories, photosByCategory } from '../../data/photos.js';
+
+export function getStaticPaths() {
+  return categories
+    .filter((c) => c.slug !== 'travel')
+    .map((cat) => ({
+      params: { category: cat.slug },
+      props: { category: cat },
+    }));
+}
+
+const { category } = Astro.props;
+const photos = photosByCategory(category.slug);
+---
+
+<Base
+  title={category.name}
+  description={category.description}
+  activeNav={category.slug}
+>
+  <section class="max-w-gallery mx-auto px-6 md:px-10 pt-8 md:pt-12 pb-16 md:pb-24">
+    <header class="max-w-prose mb-10 md:mb-14 fade-up">
+      <p class="eyebrow mb-3">Category</p>
+      <h1 class="display text-ink">{category.name}</h1>
+      <p class="body-serif text-muted mt-5">{category.description}</p>
+      <p class="eyebrow mt-6 text-muted">
+        {photos.length} {photos.length === 1 ? 'photograph' : 'photographs'}
+      </p>
+    </header>
+
+    {
+      photos.length > 0 ? (
+        <PhotoGrid photos={photos} />
+      ) : (
+        <div class="py-24 text-center">
+          <p class="eyebrow text-muted">No photographs in this category yet.</p>
+        </div>
+      )
+    }
+  </section>
+</Base>
