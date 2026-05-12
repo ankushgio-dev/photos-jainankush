@@ -54,33 +54,14 @@ export const photos = [
 
 
   // GOLDEN TEMPLE
-  { slug: 'gt-001', src: '/photos/golden-temple/gt-001.jpg', alt: 'The temple reflected at first light', category: 'golden-temple', featured: true },
-  { slug: 'gt-002', src: '/photos/golden-temple/gt-002.jpg', alt: 'Pilgrim walking the parikrama', category: 'golden-temple' },
-  { slug: 'gt-003', src: '/photos/golden-temple/gt-003.jpg', alt: 'Marble corridor at night', category: 'golden-temple' },
 
   // SUNRISE / SUNSETS
-  { slug: 'ss-001', src: '/photos/sunrise-sunsets/ss-001.jpg', alt: 'Mustard field at first light', category: 'sunrise-sunsets', featured: true },
-  { slug: 'ss-002', src: '/photos/sunrise-sunsets/ss-002.jpg', alt: 'Silhouetted trees against an orange sky', category: 'sunrise-sunsets' },
-  { slug: 'ss-003', src: '/photos/sunrise-sunsets/ss-003.jpg', alt: 'Last light over a lake', category: 'sunrise-sunsets' },
 
   // STREET
-  { slug: 'st-001', src: '/photos/street/st-001.jpg', alt: 'Shopkeeper through a window', category: 'street' },
-  { slug: 'st-002', src: '/photos/street/st-002.jpg', alt: 'Boy on a bicycle, motion blur', category: 'street', featured: true },
-  { slug: 'st-003', src: '/photos/street/st-003.jpg', alt: 'Two men sharing chai at a roadside stall', category: 'street' },
 
   // WILDLIFE
-  { slug: 'wl-001', src: '/photos/wildlife/wl-001.jpg', alt: 'A heron at the edge of a wetland', category: 'wildlife' },
-  { slug: 'wl-002', src: '/photos/wildlife/wl-002.jpg', alt: 'Peacock unfurling its feathers', category: 'wildlife', featured: true },
-  { slug: 'wl-003', src: '/photos/wildlife/wl-003.jpg', alt: 'A kingfisher mid-dive', category: 'wildlife' },
 
   // TRAVEL — with locations for filter chips
-  { slug: 'tr-goa-001', src: '/photos/travel/tr-goa-001.jpg', alt: 'Empty beach at low tide', category: 'travel', location: 'Goa', featured: true },
-  { slug: 'tr-goa-002', src: '/photos/travel/tr-goa-002.jpg', alt: 'Fishing boats at dawn', category: 'travel', location: 'Goa' },
-  { slug: 'tr-ladakh-001', src: '/photos/travel/tr-ladakh-001.jpg', alt: 'Pangong Lake under cloud shadow', category: 'travel', location: 'Ladakh', featured: true },
-  { slug: 'tr-ladakh-002', src: '/photos/travel/tr-ladakh-002.jpg', alt: 'Monastery clinging to a cliff face', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-ladakh-003', src: '/photos/travel/tr-ladakh-003.jpg', alt: 'Yak grazing at altitude', category: 'travel', location: 'Ladakh' },
-  { slug: 'tr-spiti-001', src: '/photos/travel/tr-spiti-001.jpg', alt: 'Key Monastery from across the valley', category: 'travel', location: 'Spiti' },
-  { slug: 'tr-spiti-002', src: '/photos/travel/tr-spiti-002.jpg', alt: 'Prayer flags against a blue sky', category: 'travel', location: 'Spiti' },
 ];
 
 // Helpers
