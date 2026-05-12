@@ -84,7 +84,16 @@ export const photos = [
   { slug: 'tr-ladakh-010', src: '/photos/travel/tr-ladakh-010.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', region: 'India' },
 
   // TRAVEL — INTERNATIONAL
-  // (none yet — New Zealand uploads next)
+  { slug: 'tr-new-zealand-001', src: '/photos/travel/tr-new-zealand-001.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International', featured: true },
+  { slug: 'tr-new-zealand-002', src: '/photos/travel/tr-new-zealand-002.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-003', src: '/photos/travel/tr-new-zealand-003.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-004', src: '/photos/travel/tr-new-zealand-004.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-005', src: '/photos/travel/tr-new-zealand-005.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-006', src: '/photos/travel/tr-new-zealand-006.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-007', src: '/photos/travel/tr-new-zealand-007.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-008', src: '/photos/travel/tr-new-zealand-008.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
+  { slug: 'tr-new-zealand-009', src: '/photos/travel/tr-new-zealand-009.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International', featured: true },
+  { slug: 'tr-new-zealand-010', src: '/photos/travel/tr-new-zealand-010.jpg', alt: 'New Zealand, 2014', category: 'travel', location: 'New Zealand', region: 'International' },
 ];
 
 // Minimum photos required for a location to appear in the filter.
