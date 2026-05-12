@@ -68,6 +68,19 @@ export const photos = [
   { slug: 'tr-spiti-008', src: '/photos/travel/tr-spiti-008.jpg', alt: 'A small village settled in a valley floor, ringed by bare brown hills', category: 'travel', location: 'Spiti' },
   { slug: 'tr-spiti-009', src: '/photos/travel/tr-spiti-009.jpg', alt: 'A dirt road switchbacking up the side of a steep mountain', category: 'travel', location: 'Spiti' },
   { slug: 'tr-spiti-010', src: '/photos/travel/tr-spiti-010.jpg', alt: 'Three figures walking together across an open mountain landscape', category: 'travel', location: 'Spiti' },
+
+  { slug: 'tr-ladakh-011', src: '/photos/travel/tr-ladakh-011.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-012', src: '/photos/travel/tr-ladakh-012.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-013', src: '/photos/travel/tr-ladakh-013.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', featured: true },
+  { slug: 'tr-ladakh-014', src: '/photos/travel/tr-ladakh-014.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-015', src: '/photos/travel/tr-ladakh-015.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-016', src: '/photos/travel/tr-ladakh-016.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-017', src: '/photos/travel/tr-ladakh-017.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-018', src: '/photos/travel/tr-ladakh-018.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh', featured: true },
+  { slug: 'tr-ladakh-019', src: '/photos/travel/tr-ladakh-019.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+  { slug: 'tr-ladakh-020', src: '/photos/travel/tr-ladakh-020.jpg', alt: 'Ladakh, 2015', category: 'travel', location: 'Ladakh' },
+
+
 ];
 
 // Helpers
