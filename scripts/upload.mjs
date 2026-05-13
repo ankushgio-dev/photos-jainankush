@@ -37,7 +37,7 @@ const ROOT = join(__dirname, '..');
 const VALID_CATEGORIES = [
   'rural-punjab',
   'golden-temple',
-  'sunrise-sunsets',
+  'golden-hour',
   'street',
   'wildlife',
   'travel',
@@ -86,7 +86,7 @@ if (files.length === 0) {
 const prefixMap = {
   'rural-punjab': 'rp',
   'golden-temple': 'gt',
-  'sunrise-sunsets': 'ss',
+  'golden-hour': 'gh',
   street: 'st',
   wildlife: 'wl',
   travel: 'tr',

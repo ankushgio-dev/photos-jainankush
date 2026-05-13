@@ -4,10 +4,10 @@
 // `featured: true` means the photo can appear in the homepage hero rotation.
 
 export const categories = [
-  {
-    slug: 'rural-punjab',
-    name: 'Rural Punjab',
-    description: 'Fields, faces, and quiet rhythms from the villages of my home state.',
+ {
+    slug: 'golden-hour',
+    name: 'Golden Hour',
+    description: 'Light at the edges of the day.',
   },
   {
     slug: 'golden-temple',
@@ -15,9 +15,9 @@ export const categories = [
     description: 'Light, water, and devotion at Sri Harmandir Sahib, Amritsar.',
   },
   {
-    slug: 'sunrise-sunsets',
-    name: 'Sunrise & Sunsets',
-    description: 'The two hours of the day when the world is honest.',
+    slug: 'rural-punjab',
+    name: 'Rural Punjab',
+    description: 'Fields, faces, and quiet rhythms from the villages of my home state.',
   },
   {
     slug: 'street',
@@ -25,16 +25,17 @@ export const categories = [
     description: 'Moments found in passing, on streets I had no business being on.',
   },
   {
-    slug: 'wildlife',
-    name: 'Wildlife',
-    description: 'Patience, distance, and luck.',
-  },
-  {
     slug: 'travel',
     name: 'Travel',
     description: 'Places I went, framed through what I noticed there.',
   },
+  {
+    slug: 'wildlife',
+    name: 'Wildlife',
+    description: 'Patience, distance, and luck.',
+  },
 ];
+  
 
 // Region taxonomy for travel photos. Order here determines display order in the filter.
 export const regions = ['India', 'International'];
@@ -66,7 +67,32 @@ export const photos = [
   { slug: 'gt-011', src: '/photos/golden-temple/gt-011.jpg', alt: 'Golden Temple', category: 'golden-temple' },
   { slug: 'gt-012', src: '/photos/golden-temple/gt-012.jpg', alt: 'Golden Temple', category: 'golden-temple', featured: true },
 
-  // SUNRISE / SUNSETS
+  // GOLDEN HOUR
+  { slug: 'gh-001', src: '/photos/golden-hour/gh-001.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-002', src: '/photos/golden-hour/gh-002.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-003', src: '/photos/golden-hour/gh-003.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-004', src: '/photos/golden-hour/gh-004.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-005', src: '/photos/golden-hour/gh-005.jpg', alt: 'Golden Hour', category: 'golden-hour', featured: true },
+  { slug: 'gh-006', src: '/photos/golden-hour/gh-006.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-007', src: '/photos/golden-hour/gh-007.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-008', src: '/photos/golden-hour/gh-008.jpg', alt: 'Golden Hour', category: 'golden-hour', featured: true },
+  { slug: 'gh-009', src: '/photos/golden-hour/gh-009.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-010', src: '/photos/golden-hour/gh-010.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-011', src: '/photos/golden-hour/gh-011.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-012', src: '/photos/golden-hour/gh-012.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-013', src: '/photos/golden-hour/gh-013.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-014', src: '/photos/golden-hour/gh-014.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-015', src: '/photos/golden-hour/gh-015.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-016', src: '/photos/golden-hour/gh-016.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-017', src: '/photos/golden-hour/gh-017.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-018', src: '/photos/golden-hour/gh-018.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-019', src: '/photos/golden-hour/gh-019.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-020', src: '/photos/golden-hour/gh-020.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-021', src: '/photos/golden-hour/gh-021.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+  { slug: 'gh-022', src: '/photos/golden-hour/gh-022.jpg', alt: 'Golden Hour', category: 'golden-hour' },
+
+
+
 
   // STREET
 
