@@ -53,6 +53,18 @@ export const photos = [
   { slug: 'rp-024', src: '/photos/rural-punjab/rp-024.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
 
   // GOLDEN TEMPLE
+   { slug: 'gt-001', src: '/photos/golden-temple/gt-001.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-002', src: '/photos/golden-temple/gt-002.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-003', src: '/photos/golden-temple/gt-003.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-004', src: '/photos/golden-temple/gt-004.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-005', src: '/photos/golden-temple/gt-005.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-006', src: '/photos/golden-temple/gt-006.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-007', src: '/photos/golden-temple/gt-007.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-008', src: '/photos/golden-temple/gt-008.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-009', src: '/photos/golden-temple/gt-009.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-010', src: '/photos/golden-temple/gt-010.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-011', src: '/photos/golden-temple/gt-011.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-012', src: '/photos/golden-temple/gt-012.jpg', alt: 'Golden Temple', category: 'golden-temple', featured: true },
 
   // SUNRISE / SUNSETS
 
