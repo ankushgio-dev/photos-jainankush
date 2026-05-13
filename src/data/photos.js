@@ -54,7 +54,7 @@ export const photos = [
   { slug: 'rp-024', src: '/photos/rural-punjab/rp-024.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
 
   // GOLDEN TEMPLE
-   { slug: 'gt-001', src: '/photos/golden-temple/gt-001.jpg', alt: 'Golden Temple', category: 'golden-temple' },
+  { slug: 'gt-001', src: '/photos/golden-temple/gt-001.jpg', alt: 'Golden Temple', category: 'golden-temple' },
   { slug: 'gt-002', src: '/photos/golden-temple/gt-002.jpg', alt: 'Golden Temple', category: 'golden-temple' },
   { slug: 'gt-003', src: '/photos/golden-temple/gt-003.jpg', alt: 'Golden Temple', category: 'golden-temple' },
   { slug: 'gt-004', src: '/photos/golden-temple/gt-004.jpg', alt: 'Golden Temple', category: 'golden-temple' },
@@ -95,6 +95,26 @@ export const photos = [
 
 
   // STREET
+  { slug: 'st-001', src: '/photos/street/st-001.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-002', src: '/photos/street/st-002.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-003', src: '/photos/street/st-003.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-004', src: '/photos/street/st-004.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-005', src: '/photos/street/st-005.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-006', src: '/photos/street/st-006.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-007', src: '/photos/street/st-007.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-008', src: '/photos/street/st-008.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-009', src: '/photos/street/st-009.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-010', src: '/photos/street/st-010.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-011', src: '/photos/street/st-011.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-012', src: '/photos/street/st-012.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-013', src: '/photos/street/st-013.jpg', alt: 'Street', category: 'street', featured: true },
+  { slug: 'st-014', src: '/photos/street/st-014.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-015', src: '/photos/street/st-015.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-016', src: '/photos/street/st-016.jpg', alt: 'Street', category: 'street', featured: true },
+  { slug: 'st-017', src: '/photos/street/st-017.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-018', src: '/photos/street/st-018.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-019', src: '/photos/street/st-019.jpg', alt: 'Street', category: 'street' },
+  { slug: 'st-020', src: '/photos/street/st-020.jpg', alt: 'Street', category: 'street' },
 
   // WILDLIFE
 
