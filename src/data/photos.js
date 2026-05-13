@@ -41,16 +41,16 @@ export const regions = ['India', 'International'];
 
 export const photos = [
   // RURAL PUNJAB
-  { slug: 'rp-015', src: '/photos/rural-punjab/rp-015.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab', featured: true },
-  { slug: 'rp-016', src: '/photos/rural-punjab/rp-016.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-017', src: '/photos/rural-punjab/rp-017.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab', featured: true },
-  { slug: 'rp-018', src: '/photos/rural-punjab/rp-018.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-019', src: '/photos/rural-punjab/rp-019.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-020', src: '/photos/rural-punjab/rp-020.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-021', src: '/photos/rural-punjab/rp-021.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-022', src: '/photos/rural-punjab/rp-022.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
-  { slug: 'rp-023', src: '/photos/rural-punjab/rp-023.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab', featured: true },
-  { slug: 'rp-024', src: '/photos/rural-punjab/rp-024.jpg', alt: 'TODO describe this photograph', category: 'rural-punjab' },
+  { slug: 'rp-015', src: '/photos/rural-punjab/rp-015.jpg', alt: 'Rural Punjab', category: 'rural-punjab', featured: true },
+  { slug: 'rp-016', src: '/photos/rural-punjab/rp-016.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-017', src: '/photos/rural-punjab/rp-017.jpg', alt: 'Rural Punjab', category: 'rural-punjab', featured: true },
+  { slug: 'rp-018', src: '/photos/rural-punjab/rp-018.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-019', src: '/photos/rural-punjab/rp-019.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-020', src: '/photos/rural-punjab/rp-020.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-021', src: '/photos/rural-punjab/rp-021.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-022', src: '/photos/rural-punjab/rp-022.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
+  { slug: 'rp-023', src: '/photos/rural-punjab/rp-023.jpg', alt: 'Rural Punjab', category: 'rural-punjab', featured: true },
+  { slug: 'rp-024', src: '/photos/rural-punjab/rp-024.jpg', alt: 'Rural Punjab', category: 'rural-punjab' },
 
   // GOLDEN TEMPLE
 
