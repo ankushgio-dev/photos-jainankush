@@ -12,13 +12,14 @@
     "upload": "node scripts/upload.mjs"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "astro": "^4.16.0",
     "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.658.0",
-    "sharp": "^0.33.5",
-    "exiftool-vendored": "^28.7.0"
+    "exiftool-vendored": "^28.7.0",
+    "sharp": "^0.33.5"
   }
 }
