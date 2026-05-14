@@ -1,6 +1,7 @@
 ---
 import { featuredPhotos } from '../data/photos.js';
 import { site } from '../data/site.js';
+import SocialIcons from './SocialIcons.astro';
 
 const featured = featuredPhotos();
 // Pick a random featured photo at build time. Since this is a static site,
@@ -20,7 +21,7 @@ const heroSlugs = featured.map((p) => p.slug);
         <p class="body-serif text-muted mt-4 max-w-prose">
           A small collection of moments — fields, faces, mountains, light. From Punjab and wherever the road leads next.
         </p>
-        <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+        <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4">
           <a
             href="#categories"
             class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300 ease-soft"
@@ -28,14 +29,7 @@ const heroSlugs = featured.map((p) => p.slug);
             <span class="w-8 h-px bg-ink"></span>
             Browse the work
           </a>
-          <a
-            href={site.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-xs uppercase tracking-widest text-muted hover:text-ink transition-colors duration-300 ease-soft"
-          >
-            Instagram @{site.instagram}
-          </a>
+          <SocialIcons size={20} gap="gap-4" />
         </div>
       </div>
 

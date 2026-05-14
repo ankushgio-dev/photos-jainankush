@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site.js';
+import SocialIcons from './SocialIcons.astro';
 ---
 
 <footer class="border-t border-line/60 mt-24 md:mt-32">
@@ -8,14 +9,7 @@ import { site } from '../data/site.js';
       <p class="eyebrow">
         © {site.copyrightYear} {site.name} — All rights reserved
       </p>
-      <p class="eyebrow">
-        <a
-          href={`mailto:${site.contactEmail}`}
-          class="hover:text-ink transition-colors duration-300 ease-soft"
-        >
-          {site.contactEmail}
-        </a>
-      </p>
+      <SocialIcons size={18} gap="gap-4" />
     </div>
   </div>
 </footer>

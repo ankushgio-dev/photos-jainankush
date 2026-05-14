@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import SocialIcons from '../components/SocialIcons.astro';
 import { site } from '../data/site.js';
 ---
 
@@ -33,25 +34,7 @@ import { site } from '../data/site.js';
           <p class="body-serif text-muted max-w-prose mb-6">
             {site.contactNote}
           </p>
-          <a
-            href={`mailto:${site.contactEmail}`}
-            class="inline-flex items-baseline gap-3 font-serif text-2xl md:text-3xl font-light text-ink hover:text-accent transition-colors duration-500 ease-soft"
-          >
-            <span>{site.contactEmail}</span>
-            <span class="text-base">→</span>
-          </a>
-          <p class="mt-6">
-            <a
-              href={site.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-baseline gap-3 font-serif text-xl md:text-2xl font-light text-ink hover:text-accent transition-colors duration-500 ease-soft"
-            >
-              <span>Instagram</span>
-              <span class="text-muted">@{site.instagram}</span>
-              <span class="text-base">↗</span>
-            </a>
-          </p>
+          <SocialIcons size={32} gap="gap-6" />
         </div>
       </div>
 
