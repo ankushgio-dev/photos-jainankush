@@ -8,11 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   activeNav?: string;
+  ogImage?: string;
 }
 
-const { title, description, activeNav } = Astro.props;
+const { title, description, activeNav, ogImage } = Astro.props;
 const fullTitle = title ? `${title} — ${site.name}` : `${site.name} · ${site.tagline}`;
 const desc = description || site.bio;
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const shareImage = new URL(ogImage || '/photos/rural-punjab/rp-015.jpg', site.url).href;
 ---
 
 <!doctype html>
@@ -22,11 +25,16 @@ const desc = description || site.bio;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.url} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:image:alt" content={desc} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={shareImage} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -19,7 +19,7 @@ export function getStaticPaths() {
 const { photo, prev, next, category, position, total } = Astro.props;
 ---
 
-<Base title={category.name} description={photo.alt} activeNav={category.slug}>
+<Base title={category.name} description={photo.alt} activeNav={category.slug} ogImage={photo.src}>
   <section class="px-4 md:px-8 pt-6 md:pt-10 pb-16 md:pb-24">
     <!-- Breadcrumb + position -->
     <div class="max-w-gallery mx-auto mb-6 md:mb-10 flex items-center justify-between fade-up">
@@ -46,11 +46,14 @@ const { photo, prev, next, category, position, total } = Astro.props;
           class="block w-full h-auto max-h-[82vh] object-contain mx-auto"
         />
       </div>
-      {photo.location && (
-        <figcaption class="eyebrow text-center mt-6 text-muted">
-          {photo.location}
-        </figcaption>
-      )}
+      <figcaption class="text-center mt-6 max-w-prose mx-auto">
+        <p class="font-serif italic text-muted text-[1.0625rem] leading-relaxed">
+          {photo.alt}
+        </p>
+        {photo.location && (
+          <p class="eyebrow mt-3">{photo.location}</p>
+        )}
+      </figcaption>
     </figure>
 
     <!-- Prev/Next navigation -->
