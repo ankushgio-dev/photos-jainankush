@@ -117,6 +117,20 @@ export const photos = [
   { slug: 'st-020', src: '/photos/street/st-020.jpg', alt: 'Vendor frying jalebis in a black kadhai on the street, Amritsar', category: 'street' },
 
   // WILDLIFE
+  { slug: 'wl-001', src: '/photos/wildlife/wl-001.jpg', alt: 'Bengal tiger walking a rocky riverbank at Ranthambore, reflection in the still water below', category: 'wildlife' },
+  { slug: 'wl-002', src: '/photos/wildlife/wl-002.jpg', alt: 'Painted stork fishing at the water’s edge beside a basking marsh crocodile, Ranthambore', category: 'wildlife', featured: true },
+  { slug: 'wl-003', src: '/photos/wildlife/wl-003.jpg', alt: 'Portrait of a woolly-necked stork with its bill open against soft golden grassland, Ranthambore', category: 'wildlife' },
+  { slug: 'wl-004', src: '/photos/wildlife/wl-004.jpg', alt: 'Indian peafowl strolling a leaf-strewn forest track at Ranthambore', category: 'wildlife' },
+  { slug: 'wl-005', src: '/photos/wildlife/wl-005.jpg', alt: 'Tiger emerging from dry forest at Ranthambore, partially screened by tree trunks and undergrowth', category: 'wildlife' },
+  { slug: 'wl-006', src: '/photos/wildlife/wl-006.jpg', alt: 'Tight portrait of a Bengal tiger walking straight toward the camera, Ranthambore', category: 'wildlife' },
+  { slug: 'wl-007', src: '/photos/wildlife/wl-007.jpg', alt: 'Indian peacock perched on a tree at Ranthambore, long iridescent train cascading down the trunk', category: 'wildlife' },
+  { slug: 'wl-008', src: '/photos/wildlife/wl-008.jpg', alt: 'Tiger licking its nose mid-stride on a leaf-strewn forest floor, Ranthambore', category: 'wildlife' },
+  { slug: 'wl-009', src: '/photos/wildlife/wl-009.jpg', alt: 'Tiger crossing the safari track in front of a parked gypsy at Ranthambore', category: 'wildlife' },
+  { slug: 'wl-010', src: '/photos/wildlife/wl-010.jpg', alt: 'Tiger padding down a paved jungle road past a bilingual “Do not get down from the vehicle” warning sign, Ranthambore', category: 'wildlife', featured: true },
+  { slug: 'wl-011', src: '/photos/wildlife/wl-011.jpg', alt: 'Tiger barely visible through a screen of bare branches and boulders, Ranthambore', category: 'wildlife' },
+  { slug: 'wl-012', src: '/photos/wildlife/wl-012.jpg', alt: 'Spotted owlet peering out from a hollow in a ghost-tree at Ranthambore', category: 'wildlife' },
+  { slug: 'wl-013', src: '/photos/wildlife/wl-013.jpg', alt: 'Brown fish owl perched on a low branch under dappled canopy light, Ranthambore', category: 'wildlife' },
+  { slug: 'wl-014', src: '/photos/wildlife/wl-014.jpg', alt: 'Rufous treepie calling from a thorny branch, soft grassland behind, Ranthambore', category: 'wildlife' },
 
   // TRAVEL — INDIA
   { slug: 'tr-spiti-001', src: '/photos/travel/tr-spiti-001.jpg', alt: 'Two travellers on a green ridge at Rohtang as clouds surge around the snow peaks', category: 'travel', location: 'Spiti', region: 'India' },
