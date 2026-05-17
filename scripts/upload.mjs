@@ -2,20 +2,24 @@
 /**
  * photos.jainankush.com — upload helper
  *
- * USAGE:
+ * USAGE (add new):
  *   node scripts/upload.mjs <source-dir> <category-slug> [--location "Name"] [--region "India"] [--year 2018] [--alt-template "Name, {year}"] [--featured]
  *
- * EXAMPLE:
+ * USAGE (replace existing):
+ *   node scripts/upload.mjs <source-file-or-dir> --replace <slug>
+ *
+ * EXAMPLES:
  *   node scripts/upload.mjs ~/Desktop/new-photos rural-punjab
  *   node scripts/upload.mjs ~/Desktop/ladakh-trip travel --location "Ladakh"
+ *   node scripts/upload.mjs ~/Desktop/better-shot.jpg --replace wl-005
  *
  * WHAT IT DOES:
- *   1. Reads every JPG/JPEG/PNG from <source-dir>
+ *   1. Reads every JPG/JPEG/PNG from <source-dir> (or a single file in replace mode)
  *   2. Strips ALL EXIF/IPTC metadata
  *   3. Resizes to max 2400px on long edge (preserves aspect ratio)
  *   4. Re-encodes JPEG at quality 82 (mozjpeg) — looks great, small file size
  *   5. Writes to /public/photos/<category-slug>/<slug>.jpg
- *   6. Prints the JS entries you paste into src/data/photos.js
+ *   6. Prints the JS entries to paste into src/data/photos.js (skipped in replace mode)
  *
  * REQUIREMENTS:
  *   npm install (installs sharp)
@@ -24,7 +28,7 @@
  * we'll add an R2 upload path here — the manifest format stays identical.
  */
 
-import { readdir, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { readdir, mkdir, readFile, writeFile, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, basename, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -45,8 +49,90 @@ const VALID_CATEGORIES = [
 ];
 
 const args = process.argv.slice(2);
+
+const replaceFlag = args.indexOf('--replace');
+const replaceSlug = replaceFlag !== -1 ? args[replaceFlag + 1] : null;
+
+if (replaceSlug) {
+  // ── REPLACE MODE ─────────────────────────────────────────────────────────
+  // Overwrite an existing photo in place, preserving its slug, manifest entry,
+  // and public URL. Works from a single file or a dir containing one image.
+  if (args.length < 1) {
+    console.error('Usage: node scripts/upload.mjs <source-file-or-dir> --replace <slug>');
+    process.exit(1);
+  }
+  const src = args[0];
+  if (!existsSync(src)) {
+    console.error(`Source not found: ${src}`);
+    process.exit(1);
+  }
+
+  let srcFile;
+  const srcStat = await stat(src);
+  if (srcStat.isDirectory()) {
+    const candidates = (await readdir(src)).filter((f) => /\.(jpe?g|png)$/i.test(f));
+    if (candidates.length === 0) {
+      console.error(`No JPG/PNG files in ${src}`);
+      process.exit(1);
+    }
+    if (candidates.length > 1) {
+      console.error(`--replace expects exactly one source image; found ${candidates.length} in ${src}`);
+      process.exit(1);
+    }
+    srcFile = join(src, candidates[0]);
+  } else {
+    if (!/\.(jpe?g|png)$/i.test(src)) {
+      console.error(`Source must be a .jpg/.jpeg/.png file: ${src}`);
+      process.exit(1);
+    }
+    srcFile = src;
+  }
+
+  // Locate the existing photo by scanning category folders for <slug>.jpg
+  const photosRoot = join(ROOT, 'public', 'photos');
+  const categoryDirs = (await readdir(photosRoot, { withFileTypes: true }))
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name);
+
+  let targetPath = null;
+  let targetCategory = null;
+  for (const cat of categoryDirs) {
+    const candidate = join(photosRoot, cat, `${replaceSlug}.jpg`);
+    if (existsSync(candidate)) {
+      targetPath = candidate;
+      targetCategory = cat;
+      break;
+    }
+  }
+
+  if (!targetPath) {
+    console.error(`No existing photo found for slug "${replaceSlug}". Looked in: ${categoryDirs.join(', ')}`);
+    process.exit(1);
+  }
+
+  console.log(`\nReplacing ${replaceSlug} in /public/photos/${targetCategory}/\n`);
+
+  await sharp(srcFile)
+    .rotate()
+    .resize({ width: 2400, height: 2400, fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 82, mozjpeg: true })
+    .withMetadata({ exif: {}, icc: undefined })
+    .toFile(targetPath + '.tmp');
+
+  // sharp can't write to the same path it's reading from; swap in via .tmp.
+  const { rename } = await import('node:fs/promises');
+  await rename(targetPath + '.tmp', targetPath);
+
+  const meta = await sharp(targetPath).metadata();
+  console.log(`  ✓ ${basename(srcFile)} → ${replaceSlug}.jpg (${meta.width}×${meta.height})`);
+  console.log(`\nDone. The manifest entry in src/data/photos.js is unchanged — update the alt text there if the new image shows something different.\n`);
+  process.exit(0);
+}
+
+// ── ADD MODE ───────────────────────────────────────────────────────────────
 if (args.length < 2) {
   console.error('Usage: node scripts/upload.mjs <source-dir> <category-slug> [--location "Name"] [--featured]');
+  console.error('   or: node scripts/upload.mjs <source-file-or-dir> --replace <slug>');
   process.exit(1);
 }
 

@@ -44,6 +44,16 @@ The script:
 
 **Always update the `alt` text** before committing. The script guesses from the filename but you should describe what's in the photograph.
 
+### Replacing an existing photo
+
+To swap in a better version of a shot while keeping its URL, slug, alt text and `featured` flag intact:
+
+```bash
+node scripts/upload.mjs ~/Desktop/better-shot.jpg --replace wl-005
+```
+
+The script looks up the existing file by slug across all category folders, runs the same resize + EXIF-strip pipeline, and overwrites in place. The manifest entry in `src/data/photos.js` is untouched — edit the alt text there if the new image shows something different.
+
 ## Categories
 
 Defined in `src/data/photos.js`:
