@@ -120,7 +120,7 @@ export const photos = [
   { slug: 'wl-001', src: '/photos/wildlife/wl-001.jpg', alt: 'Bengal tiger walking a rocky riverbank at Ranthambore, reflection in the still water below', category: 'wildlife' },
   { slug: 'wl-002', src: '/photos/wildlife/wl-002.jpg', alt: 'Painted stork fishing at the water’s edge beside a basking marsh crocodile, Ranthambore', category: 'wildlife', featured: true },
   { slug: 'wl-003', src: '/photos/wildlife/wl-003.jpg', alt: 'Portrait of a woolly-necked stork with its bill open against soft golden grassland, Ranthambore', category: 'wildlife' },
-  { slug: 'wl-004', src: '/photos/wildlife/wl-004.jpg', alt: 'Indian peafowl strolling a leaf-strewn forest track at Ranthambore', category: 'wildlife' },
+  { slug: 'wl-004', src: '/photos/wildlife/wl-004.jpg', alt: 'Indian peacock displaying its fully-fanned train of iridescent eye-spotted feathers, Ranthambore', category: 'wildlife' },
   { slug: 'wl-005', src: '/photos/wildlife/wl-005.jpg', alt: 'Tiger emerging from dry forest at Ranthambore, partially screened by tree trunks and undergrowth', category: 'wildlife' },
   { slug: 'wl-006', src: '/photos/wildlife/wl-006.jpg', alt: 'Tight portrait of a Bengal tiger walking straight toward the camera, Ranthambore', category: 'wildlife' },
   { slug: 'wl-007', src: '/photos/wildlife/wl-007.jpg', alt: 'Indian peacock perched on a tree at Ranthambore, long iridescent train cascading down the trunk', category: 'wildlife' },
